@@ -1,7 +1,8 @@
-import { useEffect } from "react";
-import axios from "axios";
+// import { useEffect } from "react";
+// import axios from "axios";
 import DashboardHead from "../components/DashboardHead";
 import DashboardCurrentWeather from "../components/DashboardCurrentWeather";
+import WeatherForcast from "../components/WeatherForcast";
 
 const Dashboard = () => {
    // const API_KEY = import.meta.env.VITE_API_KEY;
@@ -27,6 +28,7 @@ const Dashboard = () => {
     <section className="min-h-screen bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300">
       <DashboardHead/>
       <DashboardCurrentWeather/>
+      <WeatherForcast/>
     </section>
     {/* <section className="min-h-screen bg-gradient-to-r from-yellow-100 via-orange-200 to-orange-400">
 

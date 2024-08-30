@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
 .custom-padding{
     @apply w-full px-1 py-4 md:px-16 lg:px-24;
+}
+.card-bg{
+    @apply bg-gradient-to-r from-white to-gray-200 p-4 rounded-[1.5rem];
+}
+
+.smooth-transition{
+    transition: all 0.3s ease-in-out;
 }
