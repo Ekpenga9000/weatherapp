@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
+import DashboardHead from "../components/DashboardHead";
 
 const Dashboard = () => {
    // const API_KEY = import.meta.env.VITE_API_KEY;
@@ -21,7 +22,16 @@ const Dashboard = () => {
   //   fetchWeatherData();
   // }, []);
   return (
-    <div>Dashboard</div>
+    <>
+    <section className="min-h-screen bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300">
+      <DashboardHead/>
+    </section>
+    {/* <section className="min-h-screen bg-gradient-to-r from-yellow-100 via-orange-200 to-orange-400">
+
+    </section> */}
+    </>
+
+
   )
 }
 
