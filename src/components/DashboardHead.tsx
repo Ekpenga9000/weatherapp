@@ -2,10 +2,10 @@ import { FaLocationCrosshairs } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 const DashboardHead = () => {
   return (
-    <section className="w-full px-1 py-4 md:px-16 lg:px-24">
+    <section className="custom-padding">
       <ul className="flex items-center justify-between ">
         <li className="flex items-center gap-4 flex-wrap">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <button className="text-2xl">
               <FaLocationCrosshairs />
             </button>
