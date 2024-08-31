@@ -9,7 +9,7 @@ const WeatherForcastCard = () => {
         <ul className="flex items-center gap-4 w-[8rem]">
           <li>
             <img
-              src={`http://openweathermap.org/img/wn/${"04d"}.png`}
+              src={`http://openweathermap.org/img/wn/${"04d"}@2x.png`}
               alt={"Weather"}
               className="h-[3rem] w-[3rem] object-cover"
             />

@@ -3,7 +3,7 @@ import CurrentWeather from "./CurrentWeather";
 import DashboardMap from "./DashboardMap";
 const DashboardCurrentWeather = () => {
   return (
-    <section className="custom-padding">
+    <section>
       <ul className="pl-2 font-semibold md:text-2xl flex items-center gap-1 mb-4">
         <li>
           <TfiLocationPin />
