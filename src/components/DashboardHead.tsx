@@ -4,7 +4,6 @@ import { CiSearch } from "react-icons/ci";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import {
   setCity,
-  // fetchWeather,
   toggleUnit,
 } from "../reduxState/weatherSlice/weatherSlice";
 

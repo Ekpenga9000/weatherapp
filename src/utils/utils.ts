@@ -44,7 +44,7 @@ const dateString = (date: string) => {
 export const filterDayOut = (list: any[]) => {
   let tracker: any[] = [];
   let result: any[] = [];
-  list.forEach((item) => {
+  list?.forEach((item) => {
     if (!tracker.includes(dateString(item.dt_txt))) {
       const weatherObj = {
         day: dateString(item.dt_txt),
@@ -58,6 +58,6 @@ export const filterDayOut = (list: any[]) => {
 };
 
 export const filterTime = (date:string, list:any[]) =>{
-  const newArray = list.filter((item) => dateString(item.dt_txt) === date)
+  const newArray = list?.filter((item) => dateExtractor(item.dt_txt) === date)
   return newArray;
 }

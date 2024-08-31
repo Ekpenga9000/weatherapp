@@ -1,20 +1,35 @@
 import { FaDroplet, FaLocationArrow } from "react-icons/fa6";
+import { getTime, capitalize } from "../utils/utils";
+import { useAppSelector } from "../hooks";
 
-const DailyCard = () => {
+interface IDailyCard{
+  time:number; 
+  src: string;
+  description:string; 
+  deg:number;
+  humidity:number; 
+  windSpeed: number;
+  temp:number; 
+}
+
+const DailyCard = (props:IDailyCard) => {
+  const {unit} = useAppSelector((state) => state.weather);
+
+  const { time, src, description, deg, humidity, windSpeed, temp } = props;
   return (
     <div className="flex flex-col items-start p-4 bg-white w-[8rem]">
-      <p className="text-gray-600 text-sm mb-4">5 AM</p>
+      <p className="text-gray-600 text-sm mb-4">{getTime(time)}</p>
       <img
-        src={`http://openweathermap.org/img/wn/${"04d"}@2x.png`}
-        alt={"Weather"}
+        src={`http://openweathermap.org/img/wn/${src}@2x.png`}
+        alt={description}
         className="h-[3rem] w-[3rem] object-cover"
       />
 
-      <p className="font-semibold">21°</p>
-      <p className="text-sm text-gray-600 mb-4">Mostly cloudy</p>
+      <p className="font-semibold">{`${temp && temp.toFixed()}`} {unit === "metric" ? "°C": "°F"}</p>
+      <p className="text-sm text-gray-600 mb-4">{capitalize(description)}</p>
 
-      <p className="flex items-center gap-1 text-sm"><FaDroplet/>34%</p>
-      <p className="flex items-center gap-1 text-sm">8 km/h <span><FaLocationArrow/></span></p>
+      <p className="flex items-center gap-1 text-sm"><FaDroplet/>{`${humidity}`}%</p>
+      <p className="flex items-center gap-1 text-sm">{`${windSpeed}`} {unit === "metric" ? "km/h": "mph"} <span><FaLocationArrow/></span></p>
     </div>
   );
 };

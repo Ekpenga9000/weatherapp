@@ -8,6 +8,7 @@ const initialState: WeatherState = {
   error: null,
   city: "Calgary",
   unit: "metric",
+  selectedDay: "Today"
 };
 
 export const fetchWeather = createAsyncThunk<
@@ -40,6 +41,9 @@ const weatherSlice = createSlice({
     setCity(state, action: PayloadAction<string>) {
       state.city = action.payload;
     },
+    setSelectedDay(state, action: PayloadAction<string>){
+      state.selectedDay = action.payload;
+    },
     toggleUnit(state) {
       state.unit = state.unit === "metric" ? "imperial" : "metric";
     },
@@ -64,5 +68,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const { setCity, toggleUnit } = weatherSlice.actions;
+export const { setCity, toggleUnit, setSelectedDay } = weatherSlice.actions;
 export default weatherSlice.reducer;

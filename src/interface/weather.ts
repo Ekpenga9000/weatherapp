@@ -6,4 +6,5 @@ export interface WeatherState {
   error: string | null;
   city: string;
   unit: string;
+  selectedDay: string;
 }

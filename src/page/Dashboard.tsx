@@ -9,22 +9,23 @@ import { fetchWeather } from "../reduxState/weatherSlice/weatherSlice";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
-  const { data, loading, error, city, unit } = useAppSelector((state) => state.weather);
+  const { data, loading, error, city, unit } = useAppSelector(
+    (state) => state.weather
+  );
 
   useEffect(() => {
     dispatch(fetchWeather({ city, unit }));
   }, [city, unit]);
-  
- console.log("Data", data)
- 
 
- if(loading){
-  return <div>Loading...</div>
- }
+  console.log("Data", data);
 
- if(error){
-  return <div>Error...</div>
- }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error...</div>;
+  }
 
   return (
     <>
