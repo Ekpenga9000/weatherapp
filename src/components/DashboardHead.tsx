@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import {
-  setCity,
-  toggleUnit,
-} from "../reduxState/weatherSlice/weatherSlice";
+import { setCity, toggleUnit } from "../reduxState/weatherSlice/weatherSlice";
 
 const DashboardHead = () => {
   const dispatch = useAppDispatch();
   const { unit } = useAppSelector((state) => state.weather);
   const [input, setInput] = useState("");
+ 
 
   const handleSearch = () => {
     if (input.trim() === "") {
@@ -32,17 +30,14 @@ const DashboardHead = () => {
 
   return (
     <section>
-      <ul className="flex items-center justify-between ">
-        <li className="flex items-center gap-4 flex-wrap">
+      <ul className="grid grid-cols-1 md:grid-cols-2 items-center justify-between">
+        <li className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
           <div className="flex items-center gap-4">
-            <button className="text-2xl">
-              <FaLocationCrosshairs />
-            </button>
-            <div className="bg-white/75 px-4 py-2 rounded-md hover:bg-white/85 focus:bg-white">
+            <div className="card-bg smooth-transition hover:bg-white/35  text-white">
               <input
                 type="text"
                 placeholder="Search for location"
-                className="bg-transparent outline-none w-[10rem] md:w-[20rem]"
+                className="bg-transparent outline-none w-[80%] md:w-[20rem]"
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
               />
@@ -51,16 +46,26 @@ const DashboardHead = () => {
               </button>
             </div>
           </div>
-          <p className="hidden md:inline-block bg-white/95 px-4 py-2 rounded-md">
-            North York 260
-          </p>
+          <button className="flex items-center gap-2 bg-white/20 hover:bg-white/25 text-white py-4 px-4 rounded-[1.5rem]">
+            <FaLocationCrosshairs /> Current location
+          </button>
         </li>
         <li>
           <div className="flex items-center">
-            <button disabled={unit === "metric"} onClick={handleUnitChange} className={`rounded-l-[1.5rem] ${unit === "metric" ? "switched-on" : "switched-off"}`}>
+            <button
+              disabled={unit === "metric"}
+              onClick={handleUnitChange}
+              className={`rounded-l-[1.5rem] ${
+                unit === "metric" ? "switched-on" : "switched-off"
+              }`}>
               °C
             </button>
-            <button disabled={unit !== "metric"} onClick={handleUnitChange} className={`rounded-r-[1.5rem] ${unit !== "metric" ? "switched-on" : "switched-off"}`}>
+            <button
+              disabled={unit !== "metric"}
+              onClick={handleUnitChange}
+              className={`rounded-r-[1.5rem] ${
+                unit !== "metric" ? "switched-on" : "switched-off"
+              }`}>
               °F
             </button>
           </div>

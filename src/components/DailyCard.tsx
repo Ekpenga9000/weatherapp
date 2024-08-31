@@ -17,7 +17,7 @@ const DailyCard = (props:IDailyCard) => {
 
   const { time, src, description, deg, humidity, windSpeed, temp } = props;
   return (
-    <div className="flex flex-col items-start p-4 bg-white w-[12rem]">
+    <div className="flex flex-col items-start p-4]">
       <p className="text-gray-600 text-sm mb-4">{getTime(time)}</p>
       <img
         src={`http://openweathermap.org/img/wn/${src}@2x.png`}

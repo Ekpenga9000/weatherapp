@@ -23,13 +23,13 @@ const WeatherForcast = () => {
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-    },
+    }
   };
 
   const weatherData = filterDayOut(data?.list);
   return (
     <section>
-      <h2 className="font-semibold pl-2">{weatherData.length} day forcast</h2>
+      <h2 className="font-semibold pl-2 text-white">{weatherData.length} day forcast</h2>
       <Carousel responsive={responsive} className="p-4">
         {weatherData.map(({ day, info }) => (
           <WeatherForcastCard

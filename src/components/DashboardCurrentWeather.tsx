@@ -8,12 +8,12 @@ const DashboardCurrentWeather = () => {
 
   return (
     <section>
-      <ul className="pl-2 font-semibold md:text-2xl flex items-center gap-1 mb-4">
-        <li>
-          <TfiLocationPin />
-        </li>
+      <ul className="pl-2 font-semibold md:text-2xl flex items-center gap-1 mb-4 text-white">
         <li>
           <h2> {data?.city.name}, {data?.city.country}</h2>
+        </li>
+        <li>
+          <TfiLocationPin />
         </li>
       </ul>
 

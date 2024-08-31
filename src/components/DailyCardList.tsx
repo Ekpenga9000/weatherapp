@@ -28,8 +28,7 @@ const DailyCardList = () => {
   };
 
   return (
-    // <div className="flex overflow-x-scroll items-center gap-2 bg-gray-200">
-    <Carousel responsive={responsive} className="p-4">
+    <Carousel responsive={responsive} className="p-4 card-bg">
       {weatherData.map((item) => (
         <DailyCard
           key={item.dt}
@@ -43,7 +42,6 @@ const DailyCardList = () => {
         />
       ))}
     </Carousel>
-    // </div>
   );
 };
 

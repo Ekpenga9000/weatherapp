@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <section className="min-h-screen bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 flex flex-col justify-center items-center ">
+      <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col justify-center items-center ">
         <div className="w-[37.5rem] md:w-[48rem] lg:w-[64rem] xl:w-[75rem] grid grid-cols-1 gap-8 py-8">
           <DashboardHead />
           <DashboardCurrentWeather />
