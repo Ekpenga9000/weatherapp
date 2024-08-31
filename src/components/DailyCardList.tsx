@@ -38,7 +38,6 @@ const DailyCardList = () => {
           description={item.weather[0].description}
           humidity={item.main.humidity}
           windSpeed={item.wind.speed}
-          deg={`${item.wind.deg}deg`}
         />
       ))}
     </Carousel>

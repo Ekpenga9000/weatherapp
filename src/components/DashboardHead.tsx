@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaLocationCrosshairs } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { setCity, toggleUnit } from "../reduxState/weatherSlice/weatherSlice";
@@ -8,7 +7,6 @@ const DashboardHead = () => {
   const dispatch = useAppDispatch();
   const { unit } = useAppSelector((state) => state.weather);
   const [input, setInput] = useState("");
- 
 
   const handleSearch = () => {
     if (input.trim() === "") {
@@ -32,23 +30,18 @@ const DashboardHead = () => {
     <section>
       <ul className="flex flex-col gap-4 md:flex-row items-center justify-between">
         <li className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <div className="flex items-center gap-4">
-            <div className="card-bg smooth-transition hover:bg-white/35 w-[18.75rem] md:w-[20rem] flex justify-between items-center text-white">
-              <input
-                type="text"
-                placeholder="Search for location"
-                className="bg-transparent outline-none w-[80%]"
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyPress}
-              />
-              <button>
-                <CiSearch />
-              </button>
-            </div>
+          <div className="card-bg smooth-transition hover:bg-white/35 w-[18.75rem] md:w-[20rem] flex justify-between items-center text-white">
+            <input
+              type="text"
+              placeholder="Search for location"
+              className="bg-transparent outline-none w-[80%]"
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+            <button onClick={handleSearch}>
+              <CiSearch />
+            </button>
           </div>
-          <button className="flex items-center gap-2 bg-purple-500 shadow-sm text-white py-2 md:py-4 px-4 md:px-8 rounded-[1.5rem]">
-            <FaLocationCrosshairs /> Current location
-          </button>
         </li>
         <li>
           <div className="flex items-center">

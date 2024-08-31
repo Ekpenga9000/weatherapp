@@ -11,7 +11,7 @@ import ErrorPage from "../components/ErrorPage";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
-  const { data, loading, error, city, unit } = useAppSelector(
+  const { loading, error, city, unit } = useAppSelector(
     (state) => state.weather
   );
 
@@ -19,15 +19,20 @@ const Dashboard = () => {
     dispatch(fetchWeather({ city, unit }));
   }, [city, unit]);
 
-  console.log("Data", data);
-
   if (loading) {
-    return <div><Loading/></div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   if (error) {
-    return <div><ErrorPage/></div>;
-
+    return (
+      <div>
+        <ErrorPage />
+      </div>
+    );
   }
 
   return (

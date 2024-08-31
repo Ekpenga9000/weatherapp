@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Weather Dashboard
 
-Currently, two official plugins are available:
+Welcome to the Weather App Dashboard! This application provides an efficient and user-friendly way to view weather information for various cities. It is built with modern web technologies and aims to deliver an optimal user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Build tools and packages
 
-## Expanding the ESLint configuration
+- **React** 
+- **Vite** 
+- **TypeScript**
+- **Tailwind css** 
+- **Redux**
+- **Leaflet**
+- **Open weather api** 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **City Search:** Allows users to search for weather information by entering a city name.
+- **Unit Toggle:** Switch between Imperial and Metric units for weather measurements.
+- **Dynamic Map:** Displays the location of the searched city using React Leaflet.
+- **6-Day Forecast Carousel:** Shows a carousel of cards with weather forecasts for the next 6 days. Clicking on a card provides detailed weather information for that day.
+- **Hourly Tab:** Provides an overview of the weather for every 3 hours of the selected day.
+- **Charts Tab:** Displays line charts for temperature and wind speed with individual toggles for each chart.
+- **Responsiveness:** The dashboard is designed to be responsive and adapt to various viewports. Note that the Charts Tab is only visible on tablets and larger screens.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## API Information
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Due to challenges with the OpenWeather API 3.0 key registration, the application uses the OpenWeather API 2.5.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### API Key
+
+To run the application locally, you'll need an API key from OpenWeather. Please visit [OpenWeather API](https://openweather.co.uk/) and if you haven't you'll be required to sign up and genarate your API key. 
+
+Once you have your API key, add it to your environment variables. The details on how to configure this can be found in the `.env.sample` file.
+
+## Running the Application Locally
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Ekpenga9000/weatherapp.git
+   cd weatherapp
+   ```
+
+2. **Install Dependencies:**
+   Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed. Then, run:
+   ```bash
+   npm install
+   ```
+
+3. **Set Up Environment Variables:**
+   Copy the `.env.sample` file to `.env` and add your OpenWeather API key.
+   ```bash
+   cp .env.sample .env
+   ```
+
+4. **Run the Application:**
+   ```bash
+   npm start
+   ```
+   The application will start on `http://localhost:3000`.
+
+5. **Build for Production:**
+   To create a production build, run:
+   ```bash
+   npm run build
+   ```
+
+## Hosting
+
+The application is currently hosted on [Netlify]([https://www.netlify.com/](https://my-awesomeweatherapp.netlify.app/)).
+
+## Additional Information
+
+- **OpenWeather API 2.5:** Chosen due to challenges with API key generation for the latest version.
+
+Feel free to open issues or contribute to the project. For any questions or feedback, please contact me.
+
