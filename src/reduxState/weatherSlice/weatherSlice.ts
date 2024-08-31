@@ -20,7 +20,7 @@ export const fetchWeather = createAsyncThunk<
  
     console.log("City", city)
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&exclude=alerts,minutely&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&exclude=alerts,minutely,hourly,daily&appid=${API_KEY}`
     );
     return response.data;
   } catch (err: any) {

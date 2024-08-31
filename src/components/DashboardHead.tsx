@@ -4,21 +4,20 @@ import { CiSearch } from "react-icons/ci";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import {
   setCity,
-  fetchWeather,
+  // fetchWeather,
   toggleUnit,
 } from "../reduxState/weatherSlice/weatherSlice";
 
 const DashboardHead = () => {
   const dispatch = useAppDispatch();
-  const { city, unit } = useAppSelector((state) => state.weather);
+  const { unit } = useAppSelector((state) => state.weather);
   const [input, setInput] = useState("");
 
   const handleSearch = () => {
     if (input.trim() === "") {
-      dispatch(fetchWeather({ city: city, unit: unit }));
+      return;
     }
     dispatch(setCity(input));
-    dispatch(fetchWeather({ city: input, unit: unit }));
     setInput("");
   };
 
