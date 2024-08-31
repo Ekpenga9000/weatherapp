@@ -11,6 +11,7 @@ const initialState: WeatherState = {
   selectedDay: "Today"
 };
 
+//Api call function
 export const fetchWeather = createAsyncThunk<
   WeatherData,
   { city: string; unit: string },

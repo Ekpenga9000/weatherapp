@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// import axios from "axios";
 import DashboardHead from "../components/DashboardHead";
 import DashboardCurrentWeather from "../components/DashboardCurrentWeather";
 import WeatherForcast from "../components/WeatherForcast";
@@ -14,7 +13,8 @@ const Dashboard = () => {
   const { loading, error, city, unit } = useAppSelector(
     (state) => state.weather
   );
-
+  
+  // dispatch api call to redux
   useEffect(() => {
     dispatch(fetchWeather({ city, unit }));
   }, [city, unit]);
