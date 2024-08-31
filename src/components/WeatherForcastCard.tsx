@@ -23,7 +23,7 @@ const WeatherForcastCard = (props: IWeatherWeatherForcastCard) => {
 
   return (
     <div
-      className="bg-white/75 hover:bg-white rounded-[1.5rem] py-4 px-8 cursor-pointer smooth-transition h-[7rem]"
+      className="bg-white/75 hover:bg-white rounded-[1.5rem] py-4 px-8 cursor-pointer smooth-transition h-[7rem] mr-4"
       onClick={handleClick}>
       <h4 className="font-semibold text-sm">{day}</h4>
       <div className="flex items-center justify-between">

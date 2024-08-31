@@ -29,7 +29,7 @@ const DailyCard = (props:IDailyCard) => {
       <p className="text-sm text-gray-600 mb-4">{capitalize(description)}</p>
 
       <p className="flex items-center gap-1 text-sm"><FaDroplet/>{`${humidity}`}%</p>
-      <p className="flex items-center gap-1 text-sm">{`${windSpeed}`} {unit === "metric" ? "km/h": "mph"} <div className={`rotate-[${deg}]`}><FaLocationArrow/></div></p>
+      <p className="flex items-center gap-1 text-sm">{`${windSpeed}`} {unit === "metric" ? "km/h": "mph"} <span className={`rotate-[${deg}]`}><FaLocationArrow/></span></p>
     </div>
   );
 };

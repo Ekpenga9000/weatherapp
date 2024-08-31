@@ -10,7 +10,7 @@ const DashboardMap = () => {
     data?.city.coord.lat !== undefined && data?.city.coord.lon !== undefined ? [data?.city.coord.lat, data?.city.coord.lon] : undefined;
     
   return (
-    <MapContainer center={position || [51.049999, -114.066666]} zoom={10} style={{ height: '20rem', width: '100%', borderRadius:"1.5rem" }}>
+    <MapContainer center={position || [51.049999, -114.066666]} zoom={10} style={{ height: '15rem', width: '100%', borderRadius:"1.5rem" }}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
