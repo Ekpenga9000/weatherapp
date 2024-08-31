@@ -5,7 +5,9 @@ import DashboardCurrentWeather from "../components/DashboardCurrentWeather";
 import WeatherForcast from "../components/WeatherForcast";
 import WeatherDetails from "../components/WeatherDetails";
 import { useAppSelector, useAppDispatch } from "../hooks";
-import { fetchWeather} from "../reduxState/weatherSlice/weatherSlice";
+import { fetchWeather } from "../reduxState/weatherSlice/weatherSlice";
+import Loading from "../components/Loading";
+import ErrorPage from "../components/ErrorPage";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();
@@ -20,27 +22,23 @@ const Dashboard = () => {
   console.log("Data", data);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Loading/></div>;
   }
 
   if (error) {
-    return <div>Error...</div>;
+    return <div><ErrorPage/></div>;
+
   }
 
   return (
-    <>
-      <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col justify-center items-center ">
-        <div className="w-[37.5rem] md:w-[48rem] lg:w-[64rem] xl:w-[75rem] grid grid-cols-1 gap-8 py-8">
-          <DashboardHead />
-          <DashboardCurrentWeather />
-          <WeatherForcast />
-          <WeatherDetails />
-        </div>
-      </section>
-      {/* <section className="min-h-screen bg-gradient-to-r from-yellow-100 via-orange-200 to-orange-400">
-
-    </section> */}
-    </>
+    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col justify-center items-center ">
+      <div className="w-[37.5rem] md:w-[48rem] lg:w-[64rem] xl:w-[75rem] grid grid-cols-1 gap-8 py-8">
+        <DashboardHead />
+        <DashboardCurrentWeather />
+        <WeatherForcast />
+        <WeatherDetails />
+      </div>
+    </section>
   );
 };
 
