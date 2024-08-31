@@ -45,4 +45,5 @@ export interface WeatherState {
   loading: boolean;
   error: string | null;
   city: string;
+  unit: string;
 }
