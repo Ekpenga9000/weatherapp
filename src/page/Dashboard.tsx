@@ -5,7 +5,7 @@ import DashboardCurrentWeather from "../components/DashboardCurrentWeather";
 import WeatherForcast from "../components/WeatherForcast";
 import WeatherDetails from "../components/WeatherDetails";
 import { useAppSelector, useAppDispatch } from "../hooks";
-import { fetchWeather } from "../reduxState/weatherSlice/weatherSlice";
+import { fetchWeather} from "../reduxState/weatherSlice/weatherSlice";
 
 const Dashboard = () => {
   const dispatch = useAppDispatch();

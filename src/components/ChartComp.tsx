@@ -78,11 +78,11 @@ const ChartComp = () => {
         </li>
       </ul>
       {isTemp === "temp" ? (
-        <div className="h-[20rem]">
+        <div className="h-[20rem] w-[36rem] md:w-[47rem] lg:w-[62rem] xl:w-[73rem]">
           <Line options={options} data={lineChartData} />
         </div>
       ) : (
-        <div>
+        <div className="h-[20rem] w-[36rem] md:w-[47rem] lg:w-[62rem] xl:w-[73rem]">
           <Line options={options} data={lineChartData2} />
         </div>
       )}

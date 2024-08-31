@@ -21,6 +21,7 @@ export const fetchWeather = createAsyncThunk<
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&exclude=alerts,minutely,hourly,daily&appid=${API_KEY}`
     );
+    
     return response.data;
   } catch (err: any) {
     if (err.response && err.response.data && err.response.data.message) {
@@ -44,7 +45,7 @@ const weatherSlice = createSlice({
     },
     toggleUnit(state) {
       state.unit = state.unit === "metric" ? "imperial" : "metric";
-    },
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -66,5 +67,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const { setCity, toggleUnit, setSelectedDay } = weatherSlice.actions;
+export const { setCity, toggleUnit, setSelectedDay} = weatherSlice.actions;
 export default weatherSlice.reducer;
