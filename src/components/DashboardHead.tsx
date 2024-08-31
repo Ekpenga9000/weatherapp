@@ -30,14 +30,14 @@ const DashboardHead = () => {
 
   return (
     <section>
-      <ul className="grid grid-cols-1 md:grid-cols-2 items-center justify-between">
-        <li className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+      <ul className="flex flex-col gap-4 md:flex-row items-center justify-between">
+        <li className="flex flex-col md:flex-row items-center justify-center gap-4">
           <div className="flex items-center gap-4">
-            <div className="card-bg smooth-transition hover:bg-white/35  text-white">
+            <div className="card-bg smooth-transition hover:bg-white/35 w-[18.75rem] md:w-[20rem] flex justify-between items-center text-white">
               <input
                 type="text"
                 placeholder="Search for location"
-                className="bg-transparent outline-none w-[80%] md:w-[20rem]"
+                className="bg-transparent outline-none w-[80%]"
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
               />

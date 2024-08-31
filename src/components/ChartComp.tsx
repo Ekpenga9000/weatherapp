@@ -58,8 +58,10 @@ const ChartComp = () => {
   };
   const options = {};
   return (
-    <section>
-      <ul className="flex items-center p-4">
+    <>
+    
+    <section className="hidden md:block">
+      <ul className="flex items-center justify-center p-4">
         <li
           className={`flex items-center gap-2 cursor-pointer ${
             isTemp === "temp" ? "switched-on" : "switched-off"
@@ -78,15 +80,19 @@ const ChartComp = () => {
         </li>
       </ul>
       {isTemp === "temp" ? (
-        <div className="h-[20rem] w-[36rem] md:w-[47rem] lg:w-[62rem] xl:w-[73rem]">
+        <div className="flex justify-center items-center pb-8">
           <Line options={options} data={lineChartData} />
         </div>
       ) : (
-        <div className="h-[20rem] w-[36rem] md:w-[47rem] lg:w-[62rem] xl:w-[73rem]">
+        <div className="flex justify-center items-center pb-8">
           <Line options={options} data={lineChartData2} />
         </div>
       )}
     </section>
+    <div className="block p-4 h-[14rem]">
+       <p>Screen size is not big enough for chart.</p>
+    </div>
+    </>
   );
 };
 

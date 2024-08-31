@@ -5,6 +5,10 @@
 html{
     scroll-behavior: smooth;
 }
+
+.test{
+    border:1px solid red;
+}
 .custom-padding{
     @apply w-full px-1 py-4 md:px-16 lg:px-24;
 }

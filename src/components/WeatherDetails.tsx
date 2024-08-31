@@ -15,7 +15,7 @@ const WeatherDetails = () => {
           Hourly
         </li>
         <li
-          className={`cursor-pointer border-b-2 py-4 ${
+          className={`md:block cursor-pointer border-b-2 py-4 ${
             !isHourly ? "font-semibold  border-b-black" : "border-b-transparent"
           }`}
           onClick={() => setIsHourly((prev) => !prev)}>

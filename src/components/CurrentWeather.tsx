@@ -12,14 +12,14 @@ const CurrentWeather = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
         <ul className="flex items-center gap-4">
           <li className="text-sm flex">
-            <span className="text-7xl text-white">
+            <span className="text-4xl md:text-7xl text-white">
               {data?.list[0].main.temp.toFixed()}
             </span>
             <span className="text-4xl text-white">
               {unit === "metric" ? "°C" : "°F"}
             </span>
           </li>
-          <li className="ml-8">
+          <li className="md:ml-8">
             <img
               src={`http://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}.png`}
               alt={"Weather"}
@@ -33,7 +33,7 @@ const CurrentWeather = () => {
             </p>
           </li>
         </ul>
-        <ul className="flex items-center justify-between md:grid grid-cols-2 gap-8">
+        <ul className="flex items-center justify-between md:grid grid-cols-2 md:gap-8">
           <li>
             <p className="text-xs text-gray-300 flex items-center gap-1 cursor-pointer">
               Wind
