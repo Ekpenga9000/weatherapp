@@ -1,4 +1,4 @@
-import loading from "../assets/images/images/loading.gif";
+import loading from "../assets/images/loading.gif";
 const Loading = () => {
   return (
     <div className="h-[90vh] flex justify-center items-center bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">

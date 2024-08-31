@@ -25,7 +25,7 @@ const WeatherForcastCard = (props: IWeatherWeatherForcastCard) => {
     <div
       className={`${day===selectedDay ? "weather-forcast-card--clicked" : "weather-forcast-card"} mr-4 py-4 px-8 rounded-[1.5rem]`}
       onClick={handleClick}>
-      <h4 className="font-semibold text-sm">{day}</h4>
+      <h4 className="font-semibold text-sm mb-4">{day}</h4>
       <div className="flex items-center justify-between">
         <ul className="flex items-center gap-4 w-[8rem]">
           <li>

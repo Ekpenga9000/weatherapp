@@ -89,7 +89,7 @@ const ChartComp = () => {
         </div>
       )}
     </section>
-    <div className="block p-4 h-[14rem]">
+    <div className="block md:hidden p-4 h-[14rem]">
        <p>Screen size is not big enough for chart.</p>
     </div>
     </>

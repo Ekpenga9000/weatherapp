@@ -31,8 +31,8 @@ const Dashboard = () => {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
-      <div className="grid grid-cols-1 gap-8 py-8 px-2">
+    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 py-8 px-2 md:px-16 lg:px-24 xl:px-40">
+      <div className="grid grid-cols-1 gap-8">
         <DashboardHead />
         <DashboardCurrentWeather />
         <WeatherForcast />

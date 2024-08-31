@@ -46,7 +46,7 @@ const DashboardHead = () => {
               </button>
             </div>
           </div>
-          <button className="flex items-center gap-2 bg-white/20 hover:bg-white/25 text-white py-4 px-4 rounded-[1.5rem]">
+          <button className="flex items-center gap-2 bg-purple-500 shadow-sm text-white py-2 md:py-4 px-4 md:px-8 rounded-[1.5rem]">
             <FaLocationCrosshairs /> Current location
           </button>
         </li>
