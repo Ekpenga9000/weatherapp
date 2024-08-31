@@ -3,7 +3,7 @@ import { useState } from "react";
 const WeatherForcastCard = () => {
   const [isClicked, setIsClicked] = useState(false); 
   return (
-    <div className="bg-white rounded-[1.5rem] py-4 px-8 cursor-pointer smooth-transition h-[7rem]"  onClick={()=> setIsClicked(prev => !prev)}>
+    <div className="bg-white/75 hover:bg-white rounded-[1.5rem] py-4 px-8 cursor-pointer smooth-transition h-[7rem]"  onClick={()=> setIsClicked(prev => !prev)}>
       <h4 className="font-semibold text-sm">Today</h4>
       <div className="flex items-center justify-between">
         <ul className="flex items-center gap-4 w-[8rem]">
