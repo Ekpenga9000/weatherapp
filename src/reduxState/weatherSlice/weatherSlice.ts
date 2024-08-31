@@ -18,8 +18,6 @@ export const fetchWeather = createAsyncThunk<
 >("weather/fetchWeather", async ({ city, unit }, { rejectWithValue }) => {
   try {
     const API_KEY = import.meta.env.VITE_API_KEY;
- 
-    console.log("City", city)
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&exclude=alerts,minutely,hourly,daily&appid=${API_KEY}`
     );

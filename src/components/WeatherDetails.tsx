@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import DailyCardList from "./DailyCardList";
+import ChartComp from "./ChartComp";
 
 const WeatherDetails = () => {
   const [isHourly, setIsHourly] = useState(true);
@@ -22,7 +22,7 @@ const WeatherDetails = () => {
           Charts
         </li>
       </ul>
-      {isHourly ? <DailyCardList /> : <div>Charts</div>}
+      {isHourly ? <DailyCardList /> : <ChartComp/>}
     </section>
   );
 };

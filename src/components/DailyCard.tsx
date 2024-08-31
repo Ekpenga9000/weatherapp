@@ -6,7 +6,7 @@ interface IDailyCard{
   time:number; 
   src: string;
   description:string; 
-  deg:number;
+  deg:string;
   humidity:number; 
   windSpeed: number;
   temp:number; 
@@ -17,7 +17,7 @@ const DailyCard = (props:IDailyCard) => {
 
   const { time, src, description, deg, humidity, windSpeed, temp } = props;
   return (
-    <div className="flex flex-col items-start p-4 bg-white w-[8rem]">
+    <div className="flex flex-col items-start p-4 bg-white w-[12rem]">
       <p className="text-gray-600 text-sm mb-4">{getTime(time)}</p>
       <img
         src={`http://openweathermap.org/img/wn/${src}@2x.png`}
@@ -29,7 +29,7 @@ const DailyCard = (props:IDailyCard) => {
       <p className="text-sm text-gray-600 mb-4">{capitalize(description)}</p>
 
       <p className="flex items-center gap-1 text-sm"><FaDroplet/>{`${humidity}`}%</p>
-      <p className="flex items-center gap-1 text-sm">{`${windSpeed}`} {unit === "metric" ? "km/h": "mph"} <span><FaLocationArrow/></span></p>
+      <p className="flex items-center gap-1 text-sm">{`${windSpeed}`} {unit === "metric" ? "km/h": "mph"} <div className={`rotate-[${deg}]`}><FaLocationArrow/></div></p>
     </div>
   );
 };
